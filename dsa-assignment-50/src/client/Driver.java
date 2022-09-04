@@ -14,7 +14,6 @@ public class Driver {
     public static void main(String[] args) {
 
         addDataIntoTheList();
-
         boolean exit = false;
         do {
             mainMenu();
@@ -74,6 +73,7 @@ public class Driver {
                 profit += orderedItems.getEntry(j).getPrice();
                 System.out.printf("%8s\t%-22s\t%12.2f\t%.2f\n","",orderedItems.getEntry(j).getName(),orderedItems.getEntry(j).getPrice(),profit);
             }
+            System.out.println("============================================================================");
             System.out.printf("%8s\t%-22s\t%12.2f\t%.2f\n","","",orderList.getEntry(i).calculateTotalAmount(),profit);
         }
         
@@ -83,7 +83,7 @@ public class Driver {
     private static void updateOrder() {
         
         
-
+        displayOrderIDsInTheList();
         System.out.println("Enter the order ID to update the detail of the order ");
         String id = input.next();
 
@@ -200,7 +200,8 @@ public class Driver {
     }
 
     private static void deleteOrder() {
-
+        
+        displayOrderIDsInTheList();
         Order firstOrder = orderList.getEntry(1);
         Order lastOrder = orderList.getEntry(orderList.getNumberOfEntries());
 
